@@ -8,6 +8,7 @@
 Multi-omics integration and machine learning to identify the target —
 molecular biology and in vivo models to test whether it is real.
 
+<!--METRICS:START-->
 [![Publications](https://img.shields.io/badge/Publications-55%2B-1f4e79?style=flat-square)](#selected-research-programs)
 [![Citations](https://img.shields.io/badge/Citations-~1%2C150-1f4e79?style=flat-square)](https://orcid.org/0000-0001-9555-1814)
 [![h-index](https://img.shields.io/badge/h--index-18-1f4e79?style=flat-square)](https://www.scopus.com/authid/detail.uri?authorId=57797410200)
@@ -18,6 +19,9 @@ molecular biology and in vivo models to test whether it is real.
 [![SciProfiles](https://img.shields.io/badge/SciProfiles-2153611-004B87?style=flat-square)](https://sciprofiles.com/profile/2153611)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Profile-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
 [![Email](https://img.shields.io/badge/khaled@kumamoto--u.ac.jp-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:khaled@kumamoto-u.ac.jp)
+
+<sub>Publication, citation, and index figures from [OpenAlex](https://openalex.org/authors/orcid:0000-0001-9555-1814), updated automatically — last refreshed on first run.</sub>
+<!--METRICS:END-->
 
 </div>
 
@@ -41,10 +45,6 @@ Kumamoto University spanning genomics, metabolomics, computational chemistry,
 molecular biology, and biosafety level 2 and 3 virology, which means a
 predicted target can be tested in primary human cells and in murine models
 inside my own group.
-
----
-
-*Publication and citation figures retrieved from Google Scholar and Scopus, October 2026.*
 
 ---
 

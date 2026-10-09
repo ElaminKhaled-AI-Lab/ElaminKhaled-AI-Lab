@@ -1,0 +1,51 @@
+name: Update publication metrics
+
+on:
+  schedule:
+    # 03:17 UTC daily. An odd minute on purpose: jobs scheduled at :00 queue
+    # behind everyone else's and are delayed or dropped at peak times.
+    - cron: '17 3 * * *'
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+  push:
+    paths:
+      - '.github/workflows/update-metrics.yml'
+      - 'scripts/update_metrics.py'
+
+permissions:
+  contents: write           # required so the job can commit the README
+
+concurrency:
+  group: update-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch metrics and rewrite badges
+        env:
+          ORCID: '0000-0001-9555-1814'
+          OPENALEX_MAILTO: 'dr.khaledalamin86@gmail.com'
+          SCHOLAR_ID: 'oyrk6pwAAAAJ'
+          SCOPUS_ID: '57797410200'
+          SCIPROFILES_ID: '2153611'
+          CONTACT_EMAIL: 'khaled@kumamoto-u.ac.jp'
+        run: python scripts/update_metrics.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "No change today."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update metrics from OpenAlex"
+          git push
