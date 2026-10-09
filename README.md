@@ -9,9 +9,10 @@ Multi-omics integration and machine learning to identify the target —
 molecular biology and in vivo models to test whether it is real.
 
 <!--METRICS:START-->
-[![Publications](https://img.shields.io/badge/Publications-55%2B-1f4e79?style=flat-square)](#selected-research-programs)
-[![Citations](https://img.shields.io/badge/Citations-~1%2C150-1f4e79?style=flat-square)](https://orcid.org/0000-0001-9555-1814)
-[![h-index](https://img.shields.io/badge/h--index-18-1f4e79?style=flat-square)](https://www.scopus.com/authid/detail.uri?authorId=57797410200)
+[![Publications](https://img.shields.io/badge/Publications-60-1f4e79?style=flat-square)](https://openalex.org/works?filter=author.orcid:0000-0001-9555-1814)
+[![Citations](https://img.shields.io/badge/Citations-1%2C092-1f4e79?style=flat-square)](https://openalex.org/authors/orcid:0000-0001-9555-1814)
+[![h-index](https://img.shields.io/badge/h--index-19-1f4e79?style=flat-square)](https://openalex.org/authors/orcid:0000-0001-9555-1814)
+[![i10-index](https://img.shields.io/badge/i10--index-28-1f4e79?style=flat-square)](https://openalex.org/authors/orcid:0000-0001-9555-1814)
 [![Lab](https://img.shields.io/badge/Lab-10_researchers-1f4e79?style=flat-square)](#background)
 
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0001--9555--1814-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0001-9555-1814)
@@ -20,7 +21,7 @@ molecular biology and in vivo models to test whether it is real.
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Profile-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
 [![Email](https://img.shields.io/badge/khaled@kumamoto--u.ac.jp-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:khaled@kumamoto-u.ac.jp)
 
-<sub>Publication, citation, and index figures from [OpenAlex](https://openalex.org/authors/orcid:0000-0001-9555-1814), updated automatically — last refreshed on first run.</sub>
+<sub>Publication, citation, and index figures from [OpenAlex](https://openalex.org/authors/orcid:0000-0001-9555-1814), updated automatically — last refreshed 09 October 2026.</sub>
 <!--METRICS:END-->
 
 </div>
