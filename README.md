@@ -9,18 +9,21 @@ Multi-omics integration and machine learning to identify the target —
 molecular biology and in vivo models to test whether it is real.
 
 <!--METRICS:START-->
-[![Publications](https://img.shields.io/badge/Publications-55%2B-1f4e79?style=flat-square)](#selected-research-programs)
-[![Citations](https://img.shields.io/badge/Citations-~1%2C150-1f4e79?style=flat-square)](https://orcid.org/0000-0001-9555-1814)
-[![h-index](https://img.shields.io/badge/h--index-18-1f4e79?style=flat-square)](https://www.scopus.com/authid/detail.uri?authorId=57797410200)
+[![Publications](https://img.shields.io/badge/Publications-64-1f4e79?style=flat-square)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
+[![Citations](https://img.shields.io/badge/Citations-1%2C387-1f4e79?style=flat-square)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
+[![h-index](https://img.shields.io/badge/h--index-21-1f4e79?style=flat-square)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
+[![i10-index](https://img.shields.io/badge/i10--index-33-1f4e79?style=flat-square)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
 [![Lab](https://img.shields.io/badge/Lab-10_researchers-1f4e79?style=flat-square)](#background)
+[![Containment](https://img.shields.io/badge/Containment-BSL--2_%2F_BSL--3-1f4e79?style=flat-square)](#the-full-chain-in-one-group)
 
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0001--9555--1814-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0001-9555-1814)
 [![Scopus](https://img.shields.io/badge/Scopus-57797410200-E9711C?style=flat-square&logo=elsevier&logoColor=white)](https://www.scopus.com/authid/detail.uri?authorId=57797410200)
+[![Web of Science](https://img.shields.io/badge/ResearcherID-ADL--6823--2022-5E33BF?style=flat-square&logo=clarivate&logoColor=white)](https://www.webofscience.com/wos/author/record/ADL-6823-2022)
 [![SciProfiles](https://img.shields.io/badge/SciProfiles-2153611-004B87?style=flat-square)](https://sciprofiles.com/profile/2153611)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Profile-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=oyrk6pwAAAAJ)
 [![Email](https://img.shields.io/badge/khaled@kumamoto--u.ac.jp-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:khaled@kumamoto-u.ac.jp)
 
-<sub>Publication, citation, and index figures from [OpenAlex](https://openalex.org/authors/orcid:0000-0001-9555-1814), updated automatically — last refreshed on first run.</sub>
+<sub>Figures from [Google Scholar](https://scholar.google.com/citations?user=oyrk6pwAAAAJ), refreshed automatically — last updated <!--ASOF-->9 October 2026<!--/ASOF-->.</sub>
 <!--METRICS:END-->
 
 </div>
@@ -45,6 +48,41 @@ Kumamoto University spanning genomics, metabolomics, computational chemistry,
 molecular biology, and biosafety level 2 and 3 virology, which means a
 predicted target can be tested in primary human cells and in murine models
 inside my own group.
+
+---
+
+## The full chain, in one group
+
+Most target-discovery programs end at a ranked gene list, because the group
+that produced it cannot test it. The handoff to a wet laboratory is where
+months go, and where a prediction that was never going to survive contact with
+a cell quietly consumes a year of someone else's time.
+
+My laboratory runs the whole chain. A target identified on Monday can be
+docked, synthesized against, knocked down in a cell, and put into a mouse
+without leaving the group.
+
+| Stage | What happens | What I use |
+|---|---|---|
+| **1. Integrate** | Genomic, transcriptomic, metabolomic, proteomic, and clinical phenotype data brought into one model | Multi-cohort integration · batch-effect correction · subtype discovery |
+| **2. Learn** | Structure extracted, patients stratified, targets ranked | Gradient boosting, random forests, elastic net where the biology must be legible · graph neural networks and transformers where it need not · variational autoencoders and diffusion models for generative design · reinforcement learning for molecular design · SHAP and feature attribution |
+| **3. Control** | The prediction tested against something able to refute it, before anyone spends money on it | Power-matched comparisons · permutation and matched-background nulls · split-half replication · leakage control · falsifiable validation fixtures |
+| **4. Design** | A molecule built against the surviving target | Structure- and ligand-based design · docking (AutoDock Vina, Glide, MOE) · molecular dynamics · MM-GBSA and MM-PBSA · pharmacophore modeling · QSAR and ADMET · multi-billion-compound virtual screening · PROTAC and targeted protein degradation |
+| **5. Test in cells** | The target confirmed or killed at the bench | CRISPR-Cas9 target validation · gene knockdown and transfection · Western blotting · flow cytometry · ELISA · immunohistochemistry · HPLC and NMR · two-dimensional, three-dimensional spheroid, and primary human cell culture |
+| **6. Test in animals** | Efficacy and pharmacokinetics in a living system | Murine disease and xenograft models · full pharmacokinetic and pharmacodynamic characterization |
+| **7. Deliver** | A candidate made into something administrable | Folate-appended cyclodextrin carriers · siRNA nanomedicine · mRNA vaccine construct design · delivery-platform selection |
+| **8. Contain** | Work with live pathogens where the biology requires it | BSL-2 and BSL-3 facilities and procedures |
+
+Stages 1 to 4 are where most computational biology groups stop. Stages 5 to 8
+are where most wet laboratories start, and where they depend on someone else
+for the first four. Holding all eight is what lets a computational prediction
+be stated as a hypothesis with a named experiment that would refute it — and
+then have that experiment actually run.
+
+A worked example: a 2025 study in which target prioritization and
+natural-product screening identified a nanomolar HIV-1 latency-reversing
+agent, which was then validated in primary human CD4-positive T cells under
+BSL-3 containment. Prediction and refutation test, same group, one paper.
 
 ---
 

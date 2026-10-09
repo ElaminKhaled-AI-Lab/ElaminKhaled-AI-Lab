@@ -1,0 +1,80 @@
+name: Update Google Scholar metrics
+
+on:
+  schedule:
+    # 03:17 UTC daily. An odd minute deliberately: jobs set to :00 queue behind
+    # everyone else's and are delayed or dropped at peak times.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/update-scholar.yml'
+      - 'scripts/update_scholar.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-scholar
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # history needed for the keep-alive check
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch Scholar figures and rewrite badges
+        env:
+          SERPAPI_KEY:    ${{ secrets.SERPAPI_KEY }}
+          SCHOLAR_ID:     'oyrk6pwAAAAJ'
+          ORCID:          '0000-0001-9555-1814'
+          SCOPUS_ID:      '57797410200'
+          WOS_ID:         'ADL-6823-2022'
+          SCIPROFILES_ID: '2153611'
+          CONTACT_EMAIL:  'khaled@kumamoto-u.ac.jp'
+        run: python scripts/update_scholar.py
+
+      - name: Commit on change, or every 21 days to keep the schedule alive
+        run: |
+          set -euo pipefail
+
+          # GitHub disables scheduled workflows after 60 days without
+          # repository activity. A commit resets that clock, so: commit
+          # whenever the figures move, and otherwise force one every 21 days.
+          LAST=$(git log -1 --format=%ct)
+          AGE=$(( ( $(date +%s) - LAST ) / 86400 ))
+          echo "Days since last commit: $AGE"
+
+          if git diff --quiet -- README.md; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+
+          # Did anything beyond the date stamp change?
+          MOVED=$(git diff -U0 -- README.md \
+                  | grep -E '^\+' | grep -v '^+++' \
+                  | grep -vc 'last updated' || true)
+
+          if [ "$MOVED" -gt 0 ]; then
+            MSG="Update Scholar metrics"
+          elif [ "$AGE" -ge 21 ]; then
+            MSG="Refresh metric timestamp (keeps the schedule enabled)"
+          else
+            echo "Date stamp only, last commit $AGE days ago — skipping noise."
+            git checkout -- README.md
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "$MSG"
+          git push
+          echo "Committed: $MSG"
